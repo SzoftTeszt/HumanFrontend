@@ -1,0 +1,26 @@
+<!-- {{humans|json}} -->
+
+<div class="row">
+    <div *ngFor="let oszlop of oszlopok" class="col">{{oszlop}}</div>
+    <div class="col">Actions</div>
+</div>
+
+<div  class="row my-1">
+    <div *ngFor="let oszlop of oszlopok" class="col">
+        <input [(ngModel)]="newHuman[oszlop]" type="text" class="form-control" >
+    </div>
+    <div class="col">
+        <button (click)="addHuman()" type="button" class="btn btn-danger">Add</button>
+   
+    </div>
+</div>
+
+<div *ngFor="let human of humans" class="row my-1">
+    <div *ngFor="let oszlop of oszlopok" class="col">
+        <input [(ngModel)]="human[oszlop]" type="text" class="form-control" >
+    </div>
+    <div class="col">
+        <button (click)="editHuman(human)" type="button" class="btn btn-danger">Save</button>
+        <button (click)="deleteHuman(human)" type="button" class="btn btn-warning">Delete</button>
+    </div>
+</div>
